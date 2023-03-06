@@ -1,0 +1,7 @@
+Fatal read error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x10caf2cc0>
+transport: <_SelectorSocketTransport fd=11 read=polling write=<idle, bufsize=0>>
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python/3.7.2_2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/asyncio/selector_events.py", line 801, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+OSError: [Errno 65] No route to host

@@ -1,6 +1,10 @@
 import discord
 from dotenv import load_dotenv
 import os
+from pycoingecko import CoinGeckoAPI
+import re 
+
+
 
 
 load_dotenv()
@@ -11,6 +15,9 @@ intents = discord.Intents.default()
 intents.members = True
 
 client = discord.Client(intents=intents)
+
+cg = CoinGeckoAPI()
+
 
 
 # @client.event
@@ -33,6 +40,15 @@ async def on_message(message):
 		await message.channel.send('Olá! Você pode encontrar meu source code em https://github.com/murilomenezes1/DiscordBot')
 	if message.content.lower() == "!author":
 		await message.channel.send("Fui desenvolvido por Murilo Menezes para a disciplina de NLP!")
+	
+	match = re.match(r'^!run ([A-Za-z]+) ([A-Za-z]+)$', message.content.lower())
+	if match:
+		coin = match.group(1).lower()
+		currency = match.group(2).lower()
+		p = cg.get_price(ids=coin, vs_currencies=currency)
+
+		await message.channel.send("{} está sendo negociada à {}${:5,.2f}".format(coin,  currency.upper(), p[coin][currency]))
+
 
 client.run(str(TOKEN))
 
