@@ -7,6 +7,9 @@ Para rodar o servidor localmente, sera necessario instalar algumas bibliotecas.
   3. pip install python-dotenv (opicional)
   
 Para o item 3, pode-se instalar a biblioteca e adicionar um token do bot ao .env, ou alterar o codigo para receber o token diretamente o client.run() da linha 53.  
+Por fim, execute:
+   
+   python bot.py
 
 ## Ensaios  ##  
 [Ensaio 0](https://github.com/murilomenezes1/DiscordBot/blob/master/ensaio_0.md)  
