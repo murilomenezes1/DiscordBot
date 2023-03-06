@@ -1,4 +1,4 @@
-###Discord Bot criado para a disciplina de NLP.  
+###Discord Bot criado para a disciplina de NLP.  ###
 
 Para rodar o servidor localmente, sera necessario instalar algumas bibliotecas.  
   
