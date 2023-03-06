@@ -35,7 +35,7 @@ async def on_message(message):
 		return
 
 	if message.content.lower() == "!help":
-		await message.channel.send('Olá! Digite !source para acessar meu source code, e !author para saber sobre meu criador.')
+		await message.channel.send('Olá! !run <crypto> <currency> retorna o valor atual do ativo na moeda escolhida - dados fornecidos pela API da CoinGecko')
 	if message.content.lower() == '!source':
 		await message.channel.send('Olá! Você pode encontrar meu source code em https://github.com/murilomenezes1/DiscordBot')
 	if message.content.lower() == "!author":
