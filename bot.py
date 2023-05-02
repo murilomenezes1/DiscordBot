@@ -164,7 +164,7 @@ async def on_message(message):
 		term = search.group(1).lower()
 
 		if search.group(2):
-			th = wn_search.group(2)[3:]
+			th = search.group(2)[3:]
 			await message.channel.send("Iniciando busca por termo usando threshold = {}".format(th))
 
 		else:
