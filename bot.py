@@ -156,7 +156,7 @@ async def on_message(message):
 		
 
 
-	search = re.match(r'^!search ([A-Za-z]+)(?: th=([\d.]+))?', message.content.lower())
+	search = re.match(r'^!search ([A-Za-z]+) (?:th=([\d.]+))?', message.content.lower())
 
 	if search:
 
@@ -164,7 +164,7 @@ async def on_message(message):
 		term = search.group(1).lower()
 
 		if search.group(2):
-			th = search.group(2)[3:]
+			th = search.group(2)
 			await message.channel.send("Iniciando busca por termo usando threshold = {}".format(th))
 
 		else:
@@ -211,7 +211,7 @@ async def on_message(message):
 
 
 
-	wn_search = re.match(r'^!wn_search ([A-Za-z]+)(?: th=([\d.]+))?', message.content.lower())
+	wn_search = re.match(r'^!wn_search ([A-Za-z]+) (?:th=([\d.]+))?', message.content.lower())
 	if wn_search:
 
 		th = 0 
@@ -220,8 +220,8 @@ async def on_message(message):
 
 
 		if wn_search.group(2):
-			th = wn_search.group(2)[3:]
-			await message.channel.send("Iniciando busca por temo usando threshold = {}".format(th))
+			th = wn_search.group(2)
+			await message.channel.send("Iniciando busca por termo usando threshold = {}".format(th))
 
 		else:
 
@@ -256,8 +256,6 @@ async def on_message(message):
 			if i in index.keys():
 
 				for k in index[i].keys():
-
-					print(k)
 
 					if float(data[k]['Sentiment']) >= float(th):
 
