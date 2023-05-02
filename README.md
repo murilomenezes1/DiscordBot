@@ -15,3 +15,4 @@ Por fim, execute:
 [Ensaio 0](https://github.com/murilomenezes1/DiscordBot/blob/master/ensaio_0.md)  
 [Ensaio 1](https://github.com/murilomenezes1/DiscordBot/blob/master/ensaio_1.md)  
 [Ensaio 2](https://github.com/murilomenezes1/DiscordBot/blob/master/ensaio_2.md)  
+[Ensaio 3](https://github.com/murilomenezes1/DiscordBot/blob/master/ensaio_3.md)  
