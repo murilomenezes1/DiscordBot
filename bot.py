@@ -156,7 +156,7 @@ async def on_message(message):
 		
 
 
-	search = re.match(r'^!search ([A-Za-z]+) (?:th=([\d.]+))?', message.content.lower())
+	search = re.match(r'^!search\s*([A-Za-z]+)?(?:\s+th=([\d.]+))?', message.content.lower())
 
 	if search:
 
@@ -164,6 +164,7 @@ async def on_message(message):
 		term = search.group(1).lower()
 
 		if search.group(2):
+			print('group:',search.group(2))
 			th = search.group(2)
 			await message.channel.send("Iniciando busca por termo usando threshold = {}".format(th))
 
@@ -205,13 +206,13 @@ async def on_message(message):
 
 		else:
 
-			await message.channel.send("A palavra '{}' não foi encontrada em nenhum dos documentos no banco de dados.")
+			await message.channel.send("A palavra '{}' não foi encontrada em nenhum dos documentos no banco de dados.".format(term))
 
 
 
 
 
-	wn_search = re.match(r'^!wn_search ([A-Za-z]+) (?:th=([\d.]+))?', message.content.lower())
+	wn_search = re.match(r'^!wn_search\s*([A-Za-z]+)?(?:\s+th=([\d.]+))?', message.content.lower())
 	if wn_search:
 
 		th = 0 
