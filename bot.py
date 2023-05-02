@@ -16,6 +16,7 @@ import tensorflow as tf
 
 
 
+
 headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET',
@@ -200,6 +201,11 @@ async def on_message(message):
 					await message.channel.send("O link {} foi ignorado na busca, por não atender o limite de negatividade indicado pelo parametro th.".format(i))
 
 			await message.channel.send("O TFIDF da palavra '{}' entre os documentos em que ela aparece é {}".format(term,freq))
+
+
+		else:
+
+			await message.channel.send("A palavra '{}' não foi encontrada em nenhum dos documentos no banco de dados.")
 
 
 
